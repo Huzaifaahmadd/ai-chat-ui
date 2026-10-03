@@ -1,0 +1,65 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-sans: ui-sans-serif, "Segoe UI", -apple-system, BlinkMacSystemFont,
+    Roboto, Helvetica, Arial, sans-serif;
+  --font-mono: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  background: #0d1117;
+  color: #e7ebf2;
+}
+
+/* Faint routing-grid texture in the empty chat state — a quiet nod to the
+   intent-router concept instead of decoration for its own sake. */
+.grid-field {
+  background-image: radial-gradient(circle, #1b2330 1px, transparent 1px);
+  background-size: 22px 22px;
+}
+
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.35; }
+}
+.pulse-dot {
+  animation: pulse-dot 1.4s ease-in-out infinite;
+}
+
+/* Markdown inside assistant messages */
+.prose-chat p {
+  margin: 0 0 0.6em;
+}
+.prose-chat p:last-child {
+  margin-bottom: 0;
+}
+.prose-chat pre {
+  background: #0d1117;
+  border: 1px solid #252e3d;
+  color: #e7ebf2;
+  padding: 0.75rem 1rem;
+  border-radius: 6px;
+  overflow-x: auto;
+  font-size: 0.85em;
+}
+.prose-chat code {
+  font-family: var(--font-mono);
+  font-size: 0.9em;
+}
+.prose-chat ul,
+.prose-chat ol {
+  padding-left: 1.25em;
+  margin: 0 0 0.6em;
+}
+.prose-chat a {
+  color: #5fb8b8;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
